@@ -1,8 +1,9 @@
 import { createServer } from "node:http";
-import { DEPLOYMENT_STATUSES } from "@glide/shared";
+import { createLogger, DEPLOYMENT_STATUSES } from "@glide/shared";
 
 const host = process.env.API_HOST ?? "0.0.0.0";
 const port = Number(process.env.API_PORT ?? 3001);
+const logger = createLogger({ service: "api" });
 
 const server = createServer((request, response) => {
   response.setHeader("content-type", "application/json");
@@ -35,5 +36,9 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`[api] listening on http://${host}:${port}`);
+  logger.info("server listening", {
+    host,
+    port,
+    url: `http://${host}:${port}`
+  });
 });

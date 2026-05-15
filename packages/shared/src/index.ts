@@ -26,3 +26,6 @@ export type Deployment = {
   createdAt: string;
   finishedAt?: string;
 };
+
+export { createLogger } from "./logger.js";
+export type { LogContext, Logger, LoggerOptions, LogLevel } from "./logger.js";

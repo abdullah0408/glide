@@ -1,9 +1,10 @@
-import type { DeploymentStatus } from "@glide/shared";
+import { createLogger, type DeploymentStatus } from "@glide/shared";
 
 const intervalMs = Number(process.env.WORKER_INTERVAL_MS ?? 10_000);
+const logger = createLogger({ service: "worker" });
 
 function logHeartbeat(status: DeploymentStatus): void {
-  console.log(`[worker] deployment queue status: ${status}`);
+  logger.info("deployment queue heartbeat", { status });
 }
 
 logHeartbeat("queued");
