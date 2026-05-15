@@ -18,3 +18,5 @@ storage/volumes/*
 !storage/certs/.gitkeep
 !storage/logs/.gitkeep
 !storage/volumes/.gitkeep
+
+/generated/prisma

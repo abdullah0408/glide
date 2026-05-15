@@ -15,7 +15,10 @@
   },
   "devDependencies": {
     "@glide/config": "workspace:*",
+    "@types/node": "^22.10.2",
+    "dotenv": "^17.4.2",
     "prettier": "^3.3.3",
+    "prisma": "^7.8.0",
     "typescript": "^5.7.2"
   }
 }

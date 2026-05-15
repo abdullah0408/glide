@@ -1,6 +1,7 @@
 {
   "files": [],
   "references": [
+    { "path": "tsconfig.prisma.json" },
     { "path": "packages/shared" },
     { "path": "apps/api" },
     { "path": "apps/worker" },
