@@ -1,0 +1,21 @@
+{
+  "name": "glide",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --filter @glide/shared build && pnpm --parallel --filter @glide/shared --filter @glide/web --filter @glide/api --filter @glide/worker dev",
+    "dev:web": "pnpm --filter @glide/web dev",
+    "dev:api": "pnpm --filter @glide/api dev",
+    "dev:worker": "pnpm --filter @glide/worker dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "@glide/config": "workspace:*",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.2"
+  }
+}
